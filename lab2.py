@@ -4,6 +4,8 @@ Kyle Krstulich
 Physics Lab 1
 
 helper functions for my physics lab.
+
+I know this code is disgusting. I will fix it later I hope.
 '''
 import pandas as pd
 import numpy as np
