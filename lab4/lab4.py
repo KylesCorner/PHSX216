@@ -123,14 +123,23 @@ def partTwo():
         data["T"] += data["t_avg"]/5
 
     data["F_c"] = 0
+    data["T^2"] = 0
     for n, e in enumerate(data["T"]):
-        data.loc[n, "F_c"] = 2*math.pi*data["m"][0]/e
+        m = data["m"]
+        r = data["r_"+str(n+1)]
+        pi = math.pi
+        t_sq = e**2
+        output = (4*pi**2 * m * r)/t_sq
+
+        data.loc[n, "T^2"] = t_sq
+        data.loc[n, "F_c"] = output[0]
 
 
 def main():
     partOne()
     partTwo()
     print(data)
+    data.to_csv("Lab4Results.csv")
 
 
 if __name__ == "__main__":
